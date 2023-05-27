@@ -7,9 +7,41 @@
     <title>Project: Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
+ <script>
+let playerScore = 0;
+let compScore = 0;
+
+function playGame(numOfRounds) {
+    do {
+        var player = playerChoice();
+        var comp = computerChoice();
+        var result = playRound(player, comp);
+        gameResult(result, 5);
+        if(result !== 0) {
+            numOfRounds--;
+        }
+    }while(numOfRounds > 0);
+
+    if (playerScore > compScore) {
+        console.log("You win!");
+    }
+    else {
+        console.log("You Lose!");
+    }
+    clearScores();
+    }
+
+        // player selection //
+function playerChoice() {
+let userInput = prompt("Rock, paper, or scissors?"); 
+userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+        return userInput; } 
+    }
+
         // randomized computer choice //
-        const getComputerChoice = () => {
+        function computerChoice() {
+let getComputerChoice = () => {
 let randomNumber = Math.floor(Math.random() * 3);
             switch (randomNumber) {
                 case 0:
@@ -20,38 +52,42 @@ let randomNumber = Math.floor(Math.random() * 3);
                     return 'scissors';
             }
         }
-        // player selection //
-var userInput = prompt("Rock, paper, or scissors?");
-userInput = userInput.toLowerCase();{
-let playerSelection = (userInput) => {
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-        return playerSelection; } 
     }
-}
       // player and computer results // 
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection == 'rock' && computerSelection == 'paper') {
-    return 'You lose! Computer picked' + " " + computerSelection  + ', paper beats rock.';
-   } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-    return 'You win! Computer picked' + " " + computerSelection  + ', rock beats scissors.';
-}
-  if (playerSelection == 'paper' && computerSelection == 'scissors') {
-    return 'You lose! Computer picked' + " " + computerSelection  + ', scissors beats paper.';
-    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    return 'You win! Computer picked' + " " + computerSelection  + ', paper beats rock.';
-}
-  if (playerSelection == 'scissors' && computerSelection == 'rock') {
-    return 'You lose! Computer picked' + " " + computerSelection  + ', rock beats scissors.';
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-    return 'You win! Computer picked' + " " + computerSelection  + ', scissors beat paper.';
-}
-  if (playerSelection == computerSelection) {
-        return 'Tie! You both picked' + " " + playerSelection + ".";
-}
+function playRound(userInput, randomNumber) {
+    if (userInput === randomNumber) {
+        console.log('Tie! You both picked' + " " + userInput + ".");
+        return 0;
     }
-const playerSelection = userInput;
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection) || "Please pick rock, paper, or scissors");
-    </script>
+    else if (userInput === 'rock' && randomNumber === 'scissors' || userInput === 'paper' && randomNumber === 'rock' || userInput === 'scissors' && randomNumber === 'paper') {
+        console.log('You win! Computer picked' + " " + randomNumber  + ', ' + userInput + ' beats ' + randomNumber + ".");
+        return 1;
+    } 
+    else {
+        console.log('You lose! Computer picked' + " " + randomNumber  + ', ' + randomNumber + ' beats ' + userInput + ".");
+        return 2;
+    }
+}
+      //  scoring //
+function gameResult(result, points) {
+    if (result === 1) {
+        playerScore += points;
+    }
+    else if (result === 2) {
+        compScore += points;
+    }
+    else (result === 0); {
+        playerScore += 0;
+        compScore += 0;
+    }
+}
+function clearScores() {
+    playerScore = 0;
+    compScore = 0;
+}
+
+playGame(5);
+// console.log(playRound(playerSelection, computerSelection) || "Please pick rock, paper, or scissors");
+</script>
 </body>
 </html>
