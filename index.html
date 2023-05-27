@@ -21,9 +21,9 @@ let randomNumber = Math.floor(Math.random() * 3);
             }
         }
         // player selection //
-const userInput = prompt("Rock, paper, or scissors?");{
+var userInput = prompt("Rock, paper, or scissors?");
+userInput = userInput.toLowerCase();{
 let playerSelection = (userInput) => {
-    userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
         return playerSelection; } 
     }
