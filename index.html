@@ -20,41 +20,38 @@ let randomNumber = Math.floor(Math.random() * 3);
                     return 'scissors';
             }
         }
-        // player and computer selection //
-const userInput = prompt("Pick rock, paper, or scissors");{
+        // player selection //
+const userInput = prompt("Rock, paper, or scissors?");{
 let playerSelection = (userInput) => {
     userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-        return userInput } 
-    if (userInput == null || userInput == " ") {
-    alert("Please select a choice");
-return false; } 
+        return playerSelection; } 
     }
 }
-      // results in console // 
+      // player and computer results // 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == 'rock' && computerSelection == 'paper') {
-    return 'You lose! Paper beats Rock';
+    return 'You lose! Computer picked' + " " + computerSelection  + ', paper beats rock.';
    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-    return 'You win! Rock beats Scissors';
+    return 'You win! Computer picked' + " " + computerSelection  + ', rock beats scissors.';
 }
   if (playerSelection == 'paper' && computerSelection == 'scissors') {
-    return 'You lose! Scissors beats paper';
+    return 'You lose! Computer picked' + " " + computerSelection  + ', scissors beats paper.';
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    return 'You win! Paper beats rock';
+    return 'You win! Computer picked' + " " + computerSelection  + ', paper beats rock.';
 }
   if (playerSelection == 'scissors' && computerSelection == 'rock') {
-    return 'You lose! Rock beats Scissors';
+    return 'You lose! Computer picked' + " " + computerSelection  + ', rock beats scissors.';
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-    return 'You win! Scissors beat Paper';
+    return 'You win! Computer picked' + " " + computerSelection  + ', scissors beat paper.';
 }
   if (playerSelection == computerSelection) {
-        return 'Tie!';
+        return 'Tie! You both picked' + " " + playerSelection + ".";
 }
     }
 const playerSelection = userInput;
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection) || "Please pick rock, paper, or scissors");
     </script>
 </body>
 </html>
