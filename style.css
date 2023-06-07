@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores {
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 300px;
+    z-index: 1;
+}
+
+.playerCount, .compCount {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.options {
+    display: flex;
+    width: 70vw;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 1em;
+}
+
+.rock, .paper, .scissors {
+    width: 140px;
+    height: 45px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+
+  h2,
+  div {
+    text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+.rock:hover, .paper:hover, .scissors:hover {
+    background-color: #1f2937;
+    box-shadow: 0px 15px 20px #1f2937;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.roundsLeft {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.startOver {
+    display: none;
+    width: 140px;
+    height: 45px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.startOver:hover {
+    background-color: #1f2937;
+    box-shadow: 0px 15px 20px #1f2937;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.results {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .scores {
+        position: absolute;
+        top: 300px;
+        width: 60vw;
+    }
+    .options {
+        width: 100vw;
+    }
+}
