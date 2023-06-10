@@ -19,7 +19,7 @@
     width: 30vw;
     justify-content: space-evenly;
     position: absolute;
-    top: 300px;
+    top: 200px;
     z-index: 1;
 }
 
@@ -105,7 +105,7 @@
 @media screen and (max-width: 600px) {
     .scores {
         position: absolute;
-        top: 300px;
+        top: 200px;
         width: 60vw;
     }
     .options {
